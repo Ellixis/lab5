@@ -2,9 +2,7 @@ import app.App;
 import app.CollectionManager;
 import app.CommandManager;
 import app.ConsoleCaller;
-import commands.Add;
-import commands.Save;
-import commands.Show;
+import commands.*;
 import inputOut.FileManager;
 
 public class Main {
@@ -17,9 +15,13 @@ public class Main {
         app.setConsoleCaller(new ConsoleCaller());
         FileManager fileManager = new FileManager();
         app.setFileManager(fileManager);
+
         commandManager.registerCommand("add", new Add());
         commandManager.registerCommand("show", new Show());
         commandManager.registerCommand("save", new Save());
+        commandManager.registerCommand("help", new Help());
+        commandManager.registerCommand("exit", new Exit());
+
         fileManager.importCollection();
 
         app.start();

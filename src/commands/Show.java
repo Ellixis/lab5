@@ -14,6 +14,6 @@ public class Show implements Command {
 
     @Override
     public String getDescription() {
-        return "";
+        return "вывести все элементы коллекции в строковом представлении";
     }
 }

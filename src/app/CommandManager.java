@@ -14,6 +14,7 @@ public class CommandManager {
     public Command getCommandByKey(String key) {
         return commands.get(key);
     }
-
-
+    public Map<String, Command> getCommands() {
+        return commands;
+    }
 }

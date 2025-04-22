@@ -25,7 +25,7 @@ public class Main {
         commandManager.registerCommand("clear", new Clear());
 
         fileManager.importCollection();
-
+        System.out.println("ЛОЛ");
         app.start();
 
 

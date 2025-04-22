@@ -41,6 +41,14 @@ public class Ticket {
         return id;
     }
 
+    public void setDiscount(Double discount) {
+        this.discount = discount;
+    }
+
+    public Double getDiscount() {
+        return discount;
+    }
+
     public void setPrice(Long price) {
         this.price = price;
     }

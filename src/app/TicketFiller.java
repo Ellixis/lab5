@@ -38,17 +38,48 @@ public class TicketFiller {
                 System.out.println("ВВедите нормальные координаты");
             }
         }
+
         System.out.println("Введите Price:");
         while (true) {
             text = scanner.nextLine();
             if (fillPrice(ticket, text)) {
                 break;
             } else {
-                System.out.println("Давай нормально пиши");
+                System.out.println("Введите нормальный Price:");
             }
         }
 
+        System.out.println("Введите скидос:");
+        while (true) {
+            text = scanner.nextLine();
+            if (fillDiscount(ticket, text)) {
+                break;
+            } else {
+                System.out.println("Введите существующий скидос:");
+            }
+        }
+
+
+
         return ticket;
+    }
+
+    private boolean fillDiscount(Ticket ticket, String text) {
+        try {
+            double value = Double.parseDouble(text);
+            if (value <= 100 & value > 0) {
+                ticket.setDiscount(value);
+                return true;
+            } else {
+                System.out.println("Впервые вижу такую скидку");
+                return false;
+            }
+
+
+        } catch (Exception e) {
+            System.out.println("Чёт не похоже на скидку");
+            return false;
+        }
     }
 
     private boolean fillPrice(Ticket ticket, String text) {

@@ -12,6 +12,7 @@ public class TicketFiller {
         Ticket ticket = new Ticket();
         Coordinates coordinates = new Coordinates();
         String text;
+
         System.out.println("Введите имя:");
         while (true) {
             text = scanner.nextLine();
@@ -19,28 +20,16 @@ public class TicketFiller {
                 break;
             }
         }
+
         System.out.println("Введите координаты:");
-        int x;
-        double y;
         while (true) {
-            try {
-                x = scanner.nextInt();
-                y = scanner.nextDouble();
-                if (y < -174){
-                    System.out.println("hue");
+            text = scanner.nextLine();
 
-                } else {
-                    coordinates.setX(x);
-                    coordinates.setY(y);
-                    break;
-                }
-            }catch (Exception e){
-                System.out.println("JHGFjevfhew");
+            if (fillCoordinates(ticket, coordinates, text)) {
+                break;
+            } else {
+                System.out.println("ВВедите нормальные координаты");
             }
-
-        }
-        fillCoordinates(ticket, coordinates);{
-
         }
 
         return ticket;
@@ -57,11 +46,29 @@ public class TicketFiller {
 
     }
 
-    public void fillCoordinates(Ticket ticket, Coordinates coordinates) {
-        ticket.setCoordinates(coordinates);
+    public boolean fillCoordinates(Ticket ticket, Coordinates coordinates, String text) {
+        String[] parts = text.split(" ");
+        if (parts.length >= 2) {
+            try {
+                int x = Integer.parseInt(parts[0]);
+                double y = Double.parseDouble(parts[1]);
+
+                if (y < -174) {
+                    System.out.println("hue");
+                    return false;
+                } else {
+                    coordinates.setX(x);
+                    coordinates.setY(y);
+                    ticket.setCoordinates(coordinates);
+                    return true;
+                }
+            } catch (Exception e) {
+                System.out.println("JHGFjevfhew");
+                return false;
             }
-
-
+        } else {
+            System.err.println("Строка должна содержать два числа, разделённых пробелом!");
+            return false;
+        }
+    }
 }
-
-

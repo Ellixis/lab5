@@ -29,10 +29,6 @@ public class Ticket {
         return name;
     }
 
-    @Override
-    public String toString(){
-        return "Имя:" + name;
-    }
     public int compareTo(Ticket ticket) {
         return Long.compare(this.id, ticket.getId());
     }
@@ -41,5 +37,20 @@ public class Ticket {
     }
     public Long getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", coordinates=" + coordinates +
+                ", creationDate=" + creationDate +
+                ", price=" + price +
+                ", discount=" + discount +
+                ", refundable=" + refundable +
+                ", type=" + type +
+                ", event=" + event +
+                '}';
     }
 }

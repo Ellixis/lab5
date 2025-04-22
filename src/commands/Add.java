@@ -10,6 +10,7 @@ public class Add implements Command {
     public void execute(String argument) {
         TicketFiller ticketFiller = new TicketFiller();
         CollectionManager collectionManager = App.getApp().getCollectionManager();
+        collectionManager.setCurrentid();
         Ticket ticket = ticketFiller.ticketFill();
         collectionManager.addTicket(ticket);
         System.out.println(ticket.toString());

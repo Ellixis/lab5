@@ -36,4 +36,15 @@ public class CollectionManager {
         currentid = 0L;
     }
 
+    public Ticket findTickedById(long id) {
+        for (Ticket ticket : collection) {
+            if (ticket.getId().equals(id)) {
+                return ticket;
+            }
+        }
+        return null;
+    }
+    public void removeElement(Ticket ticket) {
+        collection.remove(ticket);
+    }
 }

@@ -59,9 +59,44 @@ public class TicketFiller {
             }
         }
 
+        System.out.println("Он возвратный? true/false/null");
+        while (true) {
+            text = scanner.nextLine();
+            if (fillRefundable(ticket, text)) {
+                break;
+            } else {
+                System.out.println("Введите существующий скидос:");
+            }
+        }
+
+
 
 
         return ticket;
+    }
+
+    private boolean fillRefundable(Ticket ticket, String text) {
+        if (text == null || text.trim().isEmpty()) {
+            ticket.setRefundable(null);
+            return true;
+        }
+        try {
+            String lowerText = text.trim().toLowerCase();
+
+            if ("true".equals(lowerText) || "да".equals(lowerText) || "1".equals(lowerText)) {
+                ticket.setRefundable(true);
+                return true;
+            } else if ("false".equals(lowerText) || "нет".equals(lowerText) || "0".equals(lowerText)) {
+                ticket.setRefundable(false);
+                return true;
+            } else {
+                System.out.println("Пиши true/false/да/нет/1/0");
+                return false;
+            }
+        } catch (Exception e) {
+            System.out.println("Ошибка при разборе значения возвратности");
+            return false;
+        }
     }
 
     private boolean fillDiscount(Ticket ticket, String text) {
@@ -93,8 +128,8 @@ public class TicketFiller {
                 return false;
             }
         } catch (NumberFormatException e) {
-            System.out.println("Чёт не похоже на цену");
-            return false;
+            System.out.println("ок, цены нет");
+            return true;
         }
     }
 

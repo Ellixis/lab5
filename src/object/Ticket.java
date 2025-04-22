@@ -41,6 +41,14 @@ public class Ticket {
         return id;
     }
 
+    public Boolean getRefundable() {
+        return refundable;
+    }
+
+    public void setRefundable(Boolean refundable) {
+        this.refundable = refundable;
+    }
+
     public void setDiscount(Double discount) {
         this.discount = discount;
     }

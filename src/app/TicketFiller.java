@@ -3,6 +3,10 @@ package app;
 import object.Coordinates;
 import object.Ticket;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.Scanner;
 
 public class TicketFiller {
@@ -11,6 +15,9 @@ public class TicketFiller {
     public Ticket ticketFill() {
         Ticket ticket = new Ticket();
         Coordinates coordinates = new Coordinates();
+        LocalDateTime creationDate = LocalDateTime.now();
+        Date date = Date.from(creationDate.atZone(ZoneId.systemDefault()).toInstant());
+        ticket.setCreationDate(date);
         String text;
 
         System.out.println("Введите имя:");
@@ -31,8 +38,33 @@ public class TicketFiller {
                 System.out.println("ВВедите нормальные координаты");
             }
         }
+        System.out.println("Введите Price:");
+        while (true) {
+            text = scanner.nextLine();
+            if (fillPrice(ticket, text)) {
+                break;
+            } else {
+                System.out.println("Давай нормально пиши");
+            }
+        }
 
         return ticket;
+    }
+
+    private boolean fillPrice(Ticket ticket, String text) {
+        try {
+            long value = Long.parseLong(text);
+            if (value > 0) {
+                ticket.setPrice(value);
+                return true;
+            } else {
+                System.out.println("Найс цена чел");
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Чёт не похоже на цену");
+            return false;
+        }
     }
 
     public boolean fillName(Ticket ticket, String text) {

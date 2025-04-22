@@ -3,6 +3,8 @@ package object;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.time.LocalDate;
+import java.util.Date;
 
 @XmlRootElement
 public class Ticket {
@@ -37,6 +39,23 @@ public class Ticket {
     }
     public Long getId() {
         return id;
+    }
+
+    public void setPrice(Long price) {
+        this.price = price;
+    }
+
+    public Long getPrice() {
+        return price;
+    }
+
+    public void setCreationDate(java.util.Date creationDate) {
+        this.creationDate = creationDate;
+
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
     }
 
     @Override

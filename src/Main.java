@@ -24,9 +24,9 @@ public class Main {
         commandManager.registerCommand("history", new History());
         commandManager.registerCommand("clear", new Clear());
         commandManager.registerCommand("info", new Info());
-        commandManager.registerCommand("removebyid", new RemoveById());
-        commandManager.registerCommand("removehead", new RemoveHead());
-
+        commandManager.registerCommand("remove_by_id", new RemoveById());
+        commandManager.registerCommand("remove_head", new RemoveHead());
+        commandManager.registerCommand("add_if_max", new AddIfMax());
         fileManager.importCollection();
         app.start();
 

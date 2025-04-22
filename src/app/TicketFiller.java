@@ -1,8 +1,6 @@
 package app;
 
-import object.Coordinates;
-import object.Ticket;
-import object.TicketType;
+import object.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -78,6 +76,56 @@ public class TicketFiller {
             } else {
                 System.out.println("Введите существующий тип билета:" + Arrays.toString(TicketType.values()));
             }
+        }
+
+        System.out.println("Хотите добавить событие к билету? (да/нет)");
+        String answer;
+        while (true) {
+            answer = scanner.nextLine().trim().toLowerCase();
+            if (answer.equals("да") || answer.equals("нет")) {
+                break;
+            } else {
+                System.out.println("Ошибка: введите только 'да' или 'нет'");
+                System.out.println("Хотите добавить событие к билету? (да/нет)");
+            }
+        }
+        if (answer.equals("да")) {
+            Event event = new Event();
+
+            System.out.println("Введите название события:");
+            String name = scanner.nextLine();
+
+            System.out.println("Введите минимальный возраст (или оставьте пустым):");
+            String minAge = scanner.nextLine();
+
+            System.out.println("Введите описание события (допустимое количество символов 1491):");
+            String description = scanner.nextLine();
+
+            System.out.println("Введите тип события (" + Arrays.toString(EventType.values()) + ") или оставьте пустым:");
+            String eventType = scanner.nextLine();
+
+            while (true) {
+                if (fillEvent(event, name, minAge, description, eventType)) {
+                    ticket.setEvent(event);
+                    break;
+                } else {
+                    System.out.println("Попробуйте ввести данные события снова:");
+
+                    System.out.println("Название события:");
+                    name = scanner.nextLine();
+
+                    System.out.println("Минимальный возраст:");
+                    minAge = scanner.nextLine();
+
+                    System.out.println("Описание:");
+                    description = scanner.nextLine();
+
+                    System.out.println("Тип события:");
+                    eventType = scanner.nextLine();
+                }
+            }
+        } else {
+            ticket.setEvent(null);
         }
 
 
@@ -196,4 +244,71 @@ public class TicketFiller {
             return false;
         }
     }
+
+
+
+
+
+
+
+
+    public static boolean fillEvent(Event event, String name, String minAgeStr,
+                                    String description, String eventTypeStr) {
+        if (name == null || name.trim().isEmpty()) {
+            System.out.println("Ошибка: название события не может быть пустым");
+            return false;
+        }
+        event.setName(name.trim());
+
+        // Проверка минимального возраста
+        if (minAgeStr != null && !minAgeStr.trim().isEmpty()) {
+            try {
+                long minAge = Long.parseLong(minAgeStr.trim());
+                if (minAge <= 0) {
+                    System.out.println("Ошибка: минимальный возраст должен быть больше 0");
+                    return false;
+                }
+                event.setMinAge(minAge);
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка: некорректный формат минимального возраста");
+                return false;
+            }
+        } else {
+            event.setMinAge(null);
+        }
+
+
+        if (description == null || description.trim().isEmpty()) {
+            System.out.println("Ошибка: описание не может быть null");
+            return false;
+        }
+        if (description.length() > 1491) {
+            System.out.println("Ошибка: описание слишком длинное (максимум 1491 символ)");
+            return false;
+        }
+        event.setDescription(description);
+
+
+        if (eventTypeStr != null && !eventTypeStr.trim().isEmpty()) {
+            try {
+                EventType type = EventType.valueOf(eventTypeStr.trim().toUpperCase());
+                event.setEventType(type);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Ошибка: неизвестный тип события");
+                return false;
+            }
+        } else {
+            event.setEventType(null);
+        }
+
+
+        event.setId(generateUniqueId());
+
+        return true;
+    }
+
+    private static long generateUniqueId() {
+        return System.currentTimeMillis(); // Можно заменить на более надежный вариант
+    }
 }
+

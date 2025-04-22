@@ -15,8 +15,6 @@ public class RemoveHead implements Command{
         System.out.println(collection.peek()+ " удалён");
         collection.remove();
 
-
-
     }
 
     @Override

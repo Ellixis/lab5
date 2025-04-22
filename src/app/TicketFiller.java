@@ -39,7 +39,7 @@ public class TicketFiller {
             }
 
         }
-        fillCoordinates(ticket, coordinates)){
+        fillCoordinates(ticket, coordinates);{
 
         }
 

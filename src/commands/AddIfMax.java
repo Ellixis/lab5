@@ -14,6 +14,7 @@ public class AddIfMax implements Command {
         CollectionManager collectionManager = App.getApp().getCollectionManager();
         collectionManager.setCurrentid();
         Ticket ticket1 = ticketFiller.ticketFill();
+
         if (collectionManager.isMax(ticket1)) {
             collectionManager.addTicket(ticket1);
             System.out.println("Элемент добавлен: " + ticket1.toString());

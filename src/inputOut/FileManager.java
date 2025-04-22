@@ -75,8 +75,14 @@ public class FileManager {
             JAXBWorker jaxbWorker = new JAXBWorker();
             Tickets tickets = jaxbWorker.convertXmlToObject(text);
             if ((tickets != null) && (tickets.getTickets() != null)) {
-                    collectionManager.setCollection(tickets);
-                    System.out.println("Коллекция успешно импортирована из файла");
+                    if (TicketsChecker.checkTickets(tickets)){
+                        collectionManager.setCollection(tickets);
+                        System.out.println("Коллекция успешно импортирована из файла");
+                    } else {
+                        System.out.println("Коллекция не была импортирована");
+                    }
+
+
                 }
 
             }

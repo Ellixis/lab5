@@ -64,4 +64,7 @@ public class Event {
                 ", eventType=" + eventType +
                 '}';
     }
+    public String toStringForCheck(){
+        return name + " " + minAge + " " + description + " " + eventType;
+    }
 }

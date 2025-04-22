@@ -132,7 +132,7 @@ public class TicketFiller {
 
         return ticket;
     }
-    private static boolean fillType(Ticket ticket, String text) {
+    public static boolean fillType(Ticket ticket, String text) {
         if (text == null || text.trim().isEmpty()) {
             System.out.println("Ошибка: тип билета не может быть пустым");
             return false;
@@ -148,7 +148,7 @@ public class TicketFiller {
         }
     }
 
-    private static boolean fillRefundable(Ticket ticket, String text) {
+    public static boolean fillRefundable(Ticket ticket, String text) {
         if (text == null || text.trim().isEmpty()) {
             ticket.setRefundable(null);
             return true;
@@ -172,7 +172,7 @@ public class TicketFiller {
         }
     }
 
-    private static boolean fillDiscount(Ticket ticket, String text) {
+    public static boolean fillDiscount(Ticket ticket, String text) {
         try {
             double value = Double.parseDouble(text);
             if (value <= 100 & value > 0) {
@@ -190,7 +190,7 @@ public class TicketFiller {
         }
     }
 
-    private static boolean fillPrice(Ticket ticket, String text) {
+    public static boolean fillPrice(Ticket ticket, String text) {
         try {
             long value = Long.parseLong(text);
             if (value > 0) {

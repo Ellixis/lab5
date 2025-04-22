@@ -4,7 +4,6 @@ import app.App;
 import app.CollectionManager;
 import app.TicketFiller;
 import object.Ticket;
-
 import java.util.ArrayDeque;
 
 public class RemoveHead implements Command{

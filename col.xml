@@ -1,31 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <tickets>
     <ticket>
-        <creationDate>2025-04-22T13:35:12.417+03:00</creationDate>
-        <discount>30.0</discount>
-        <id>0</id>
-        <name>eargeagr</name>
-        <price>325</price>
-        <refundable>true</refundable>
-    </ticket>
-    <ticket>
-        <creationDate>2025-04-22T13:37:53.463+03:00</creationDate>
-        <discount>3.0</discount>
-        <id>0</id>
-        <name>wefwe</name>
-        <price>23324</price>
-        <refundable>true</refundable>
-    </ticket>
-    <ticket>
         <coordinates>
-            <x>30</x>
-            <y>30.0</y>
+            <x>5</x>
+            <y>2.0</y>
         </coordinates>
-        <creationDate>2025-04-22T13:40:00.105+03:00</creationDate>
-        <discount>33.0</discount>
+        <creationDate>2025-04-22T15:18:55.809+03:00</creationDate>
+        <discount>52.0</discount>
+        <event>
+            <description>525252</description>
+            <eventType>E_SPORTS</eventType>
+            <id>1745324389827</id>
+            <minAge>52</minAge>
+            <name>питер</name>
+        </event>
         <id>0</id>
-        <name>dwefwef</name>
-        <price>322</price>
-        <refundable>true</refundable>
+        <name>это второй</name>
+        <price>52</price>
+        <refundable>false</refundable>
+        <type>BUDGETARY</type>
     </ticket>
 </tickets>

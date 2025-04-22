@@ -1,5 +1,9 @@
 package object;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Coordinates {
     private int x;
     private double y; //Значение поля должно быть больше -174
@@ -11,11 +15,11 @@ public class Coordinates {
     public void setY(double y) {
         this.y = y;
     }
-
+    @XmlElement
     public double getY() {
         return y;
     }
-
+    @XmlElement
     public int getX() {
         return x;
     }

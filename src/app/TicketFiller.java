@@ -2,10 +2,12 @@ package app;
 
 import object.Coordinates;
 import object.Ticket;
+import object.TicketType;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -68,11 +70,36 @@ public class TicketFiller {
                 System.out.println("Введите существующий скидос:");
             }
         }
+        System.out.println("Введите тип билета:" + Arrays.toString(TicketType.values()));
+        while (true) {
+            text = scanner.nextLine();
+            if (fillType(ticket, text)) {
+                break;
+            } else {
+                System.out.println("Введите существующий тип билета:" + Arrays.toString(TicketType.values()));
+            }
+        }
+
 
 
 
 
         return ticket;
+    }
+    private boolean fillType(Ticket ticket, String text) {
+        if (text == null || text.trim().isEmpty()) {
+            System.out.println("Ошибка: тип билета не может быть пустым");
+            return false;
+        }
+        try {
+            String normalizedText = text.trim().toUpperCase();
+            TicketType type = TicketType.valueOf(normalizedText);
+            ticket.setType(type);
+            return true;
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ошибка: неизвестный тип билета ");
+            return false;
+        }
     }
 
     private boolean fillRefundable(Ticket ticket, String text) {

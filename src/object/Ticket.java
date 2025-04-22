@@ -37,10 +37,11 @@ public class Ticket {
     public void setId(Long id) {
         this.id = id;
     }
+    @XmlElement
     public Long getId() {
         return id;
     }
-
+    @XmlElement
     public Boolean getRefundable() {
         return refundable;
     }
@@ -52,7 +53,7 @@ public class Ticket {
     public void setDiscount(Double discount) {
         this.discount = discount;
     }
-
+    @XmlElement
     public Double getDiscount() {
         return discount;
     }
@@ -60,7 +61,7 @@ public class Ticket {
     public void setPrice(Long price) {
         this.price = price;
     }
-
+    @XmlElement
     public Long getPrice() {
         return price;
     }
@@ -69,10 +70,35 @@ public class Ticket {
         this.creationDate = creationDate;
 
     }
-
+    @XmlElement
     public Date getCreationDate() {
         return creationDate;
     }
+    @XmlElement
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
+    public void setType(TicketType type) {
+        this.type = type;
+    }
+
+    public TicketType getType() {
+        return type;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
 
     @Override
     public String toString() {

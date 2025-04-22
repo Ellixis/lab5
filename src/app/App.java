@@ -13,6 +13,9 @@ public class App {
     Scanner scanner = new Scanner(System.in);
     private static ArrayDeque<String> deque = new ArrayDeque<>();
 
+    public static ArrayDeque<String> getDeque() {
+        return deque;
+    }
     public static String getDequeAsString() {
         return deque.toString();
     }

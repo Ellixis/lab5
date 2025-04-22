@@ -20,6 +20,10 @@ public class Ticket {
     public void setName(String name) {
         this.name = name;
     }
+    public void setCoordinates(Coordinates coordinates) {
+        this.coordinates = coordinates;
+    }
+
     @XmlElement
     public String getName() {
         return name;
@@ -28,5 +32,14 @@ public class Ticket {
     @Override
     public String toString(){
         return "Имя:" + name;
+    }
+    public int compareTo(Ticket ticket) {
+        return Long.compare(this.id, ticket.getId());
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public Long getId() {
+        return id;
     }
 }

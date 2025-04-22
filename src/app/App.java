@@ -2,8 +2,7 @@ package app;
 
 import inputOut.FileManager;
 
-import java.util.NoSuchElementException;
-import java.util.Scanner;
+import java.util.*;
 
 public class App {
     private static App app;
@@ -12,8 +11,11 @@ public class App {
     private CollectionManager collectionManager;
     private FileManager fileManager;
     Scanner scanner = new Scanner(System.in);
+    private static ArrayDeque<String> deque = new ArrayDeque<>();
 
-
+    public static String getDequeAsString() {
+        return deque.toString();
+    }
 
     private App() {
     }
@@ -56,13 +58,20 @@ public class App {
         this.fileManager = fileManager;
     }
 
+    public static void AddDeque(String argument) {
+        deque.add(argument);
+    }
+
     public void start() {
+
         while (true) {
             try {
                 String text = scanner.nextLine().toLowerCase().trim();
                 if (text.equals("exit")) {
                     break;
                 }
+
+
                 consoleCaller.call(text);
             } catch (NoSuchElementException e) {
                 System.out.println("Ctrl + D. ");

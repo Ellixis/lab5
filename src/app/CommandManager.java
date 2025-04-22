@@ -3,7 +3,6 @@ package app;
 import commands.Command;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.NoSuchElementException;
 
 public class CommandManager {
     private Map<String, Command> commands = new HashMap<>();

@@ -21,6 +21,8 @@ public class Main {
         commandManager.registerCommand("save", new Save());
         commandManager.registerCommand("help", new Help());
         commandManager.registerCommand("exit", new Exit());
+        commandManager.registerCommand("history", new History());
+        commandManager.registerCommand("clear", new Clear());
 
         fileManager.importCollection();
 

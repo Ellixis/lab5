@@ -17,6 +17,7 @@ public class CollectionManager {
         return collection;
     }
     public void addTicket(Ticket ticket){
+        ticket.setId(getCurrentid());
         collection.add(ticket);
     }
     public void setCurrentid() {

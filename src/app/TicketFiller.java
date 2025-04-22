@@ -120,7 +120,7 @@ public class TicketFiller {
                     System.out.println("Описание:");
                     description = scanner.nextLine();
 
-                    System.out.println("Тип события:");
+                    System.out.println("Тип события:(" + Arrays.toString(EventType.values()) + ") или оставьте пустым:"));
                     eventType = scanner.nextLine();
                 }
             }
@@ -130,11 +130,9 @@ public class TicketFiller {
 
 
 
-
-
         return ticket;
     }
-    private boolean fillType(Ticket ticket, String text) {
+    private static boolean fillType(Ticket ticket, String text) {
         if (text == null || text.trim().isEmpty()) {
             System.out.println("Ошибка: тип билета не может быть пустым");
             return false;
@@ -150,7 +148,7 @@ public class TicketFiller {
         }
     }
 
-    private boolean fillRefundable(Ticket ticket, String text) {
+    private static boolean fillRefundable(Ticket ticket, String text) {
         if (text == null || text.trim().isEmpty()) {
             ticket.setRefundable(null);
             return true;
@@ -174,7 +172,7 @@ public class TicketFiller {
         }
     }
 
-    private boolean fillDiscount(Ticket ticket, String text) {
+    private static boolean fillDiscount(Ticket ticket, String text) {
         try {
             double value = Double.parseDouble(text);
             if (value <= 100 & value > 0) {
@@ -192,7 +190,7 @@ public class TicketFiller {
         }
     }
 
-    private boolean fillPrice(Ticket ticket, String text) {
+    private static boolean fillPrice(Ticket ticket, String text) {
         try {
             long value = Long.parseLong(text);
             if (value > 0) {
@@ -208,7 +206,7 @@ public class TicketFiller {
         }
     }
 
-    public boolean fillName(Ticket ticket, String text) {
+    public static boolean fillName(Ticket ticket, String text) {
         if (text != null & !text.isEmpty()) {
             ticket.setName(text);
             return true;
@@ -219,7 +217,7 @@ public class TicketFiller {
 
     }
 
-    public boolean fillCoordinates(Ticket ticket, Coordinates coordinates, String text) {
+    public static boolean fillCoordinates(Ticket ticket, Coordinates coordinates, String text) {
         String[] parts = text.split(" ");
         if (parts.length >= 2) {
             try {

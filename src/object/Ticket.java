@@ -1,9 +1,10 @@
 package object;
 
 
+import jakarta.xml.bind.annotation.XmlAttribute;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.time.LocalDate;
 import java.util.Date;
 
 @XmlRootElement
@@ -37,10 +38,11 @@ public class Ticket {
     public void setId(Long id) {
         this.id = id;
     }
-    @XmlElement
+    @XmlAttribute
     public Long getId() {
         return id;
     }
+
     @XmlElement
     public Boolean getRefundable() {
         return refundable;

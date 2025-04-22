@@ -23,10 +23,9 @@ public class Main {
         commandManager.registerCommand("exit", new Exit());
         commandManager.registerCommand("history", new History());
         commandManager.registerCommand("clear", new Clear());
-        commandManager.registerCommand("add_if_max", new AddIfMax());
-
+        commandManager.registerCommand("info", new Info());
+        commandManager.registerCommand("removebyid", new RemoveById());
         fileManager.importCollection();
-        System.out.println("ЛОЛ");
         app.start();
 
 

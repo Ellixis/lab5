@@ -1,23 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <tickets>
-    <ticket>
+    <ticket id="1">
         <coordinates>
-            <x>5</x>
-            <y>2.0</y>
+            <x>20</x>
+            <y>30.0</y>
         </coordinates>
-        <creationDate>2025-04-22T15:18:55.809+03:00</creationDate>
-        <discount>52.0</discount>
+        <creationDate>2025-04-22T16:31:31.792+03:00</creationDate>
+        <discount>2.0</discount>
         <event>
-            <description>525252</description>
-            <eventType>E_SPORTS</eventType>
-            <id>1745324389827</id>
-            <minAge>52</minAge>
-            <name>питер</name>
+            <description>ewfraghrerg</description>
+            <eventType>CONCERT</eventType>
+            <id>1745328720171</id>
+            <minAge>20</minAge>
+            <name>efwfw</name>
         </event>
-        <id>0</id>
-        <name>это второй</name>
-        <price>52</price>
-        <refundable>false</refundable>
-        <type>BUDGETARY</type>
+        <name>ewfewfwef</name>
+        <price>21</price>
+        <refundable>true</refundable>
+        <type>USUAL</type>
+    </ticket>
+    <ticket id="2">
+        <coordinates>
+            <x>2</x>
+            <y>1.0</y>
+        </coordinates>
+        <creationDate>2025-04-22T16:32:37.714+03:00</creationDate>
+        <discount>1.0</discount>
+        <event>
+            <description>32greegeg</description>
+            <eventType>CONCERT</eventType>
+            <id>1745328788914</id>
+            <minAge>34</minAge>
+            <name>wefwefw</name>
+        </event>
+        <name>ewfwg</name>
+        <price>3232</price>
+        <refundable>true</refundable>
+        <type>USUAL</type>
     </ticket>
 </tickets>

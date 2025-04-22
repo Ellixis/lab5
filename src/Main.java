@@ -25,6 +25,8 @@ public class Main {
         commandManager.registerCommand("clear", new Clear());
         commandManager.registerCommand("info", new Info());
         commandManager.registerCommand("removebyid", new RemoveById());
+        commandManager.registerCommand("removehead", new RemoveHead());
+
         fileManager.importCollection();
         app.start();
 

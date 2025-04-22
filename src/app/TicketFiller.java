@@ -120,7 +120,7 @@ public class TicketFiller {
                     System.out.println("Описание:");
                     description = scanner.nextLine();
 
-                    System.out.println("Тип события:(" + Arrays.toString(EventType.values()) + ") или оставьте пустым:"));
+                    System.out.println("Тип события:(" + Arrays.toString(EventType.values()) + ") или оставьте пустым:");
                     eventType = scanner.nextLine();
                 }
             }

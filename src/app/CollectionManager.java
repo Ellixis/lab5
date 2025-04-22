@@ -8,6 +8,7 @@ import object.Tickets;
 public class CollectionManager {
     private ArrayDeque<Ticket> collection = new ArrayDeque<>();
     private Long currentid = 0L;
+    private Long currentprice = 0L;
 
     public void setCollection(Tickets collection) {
         this.collection = collection.getTickets();
@@ -36,6 +37,14 @@ public class CollectionManager {
         currentid = 0L;
     }
 
+    public boolean isMax(Ticket ticket1) {
+        for (Ticket ticket : collection) {
+            if (ticket.getPrice() > currentprice) {
+                currentprice = ticket.getPrice();
+            }
+        }
+        return !((double) currentprice > (double) ticket1.getPrice());
+    }
     public Ticket findTickedById(long id) {
         for (Ticket ticket : collection) {
             if (ticket.getId().equals(id)) {
@@ -46,5 +55,6 @@ public class CollectionManager {
     }
     public void removeElement(Ticket ticket) {
         collection.remove(ticket);
+
     }
 }

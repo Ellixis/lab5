@@ -310,5 +310,6 @@ public class TicketFiller {
     private static long generateUniqueId() {
         return System.currentTimeMillis(); // Можно заменить на более надежный вариант
     }
+
 }
 

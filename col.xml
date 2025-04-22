@@ -2,28 +2,22 @@
 <tickets>
     <ticket>
         <coordinates>
-            <x>1</x>
+            <x>5</x>
             <y>2.0</y>
         </coordinates>
-        <creationDate>2025-04-22T15:28:28.306+03:00</creationDate>
-        <discount>1.0</discount>
-        <id>1</id>
-        <name>efwef</name>
-        <price>2</price>
-        <refundable>true</refundable>
-        <type>USUAL</type>
-    </ticket>
-    <ticket>
-        <coordinates>
-            <x>3</x>
-            <y>4.0</y>
-        </coordinates>
-        <creationDate>2025-04-22T15:28:45.689+03:00</creationDate>
-        <discount>3.0</discount>
-        <id>2</id>
-        <name>wqqfeqf</name>
-        <price>3</price>
-        <refundable>true</refundable>
-        <type>CHEAP</type>
+        <creationDate>2025-04-22T15:18:55.809+03:00</creationDate>
+        <discount>52.0</discount>
+        <event>
+            <description>525252</description>
+            <eventType>E_SPORTS</eventType>
+            <id>1745324389827</id>
+            <minAge>52</minAge>
+            <name>питер</name>
+        </event>
+        <id>0</id>
+        <name>это второй</name>
+        <price>52</price>
+        <refundable>false</refundable>
+        <type>BUDGETARY</type>
     </ticket>
 </tickets>

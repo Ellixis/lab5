@@ -5,6 +5,7 @@ import app.App;
 import app.CollectionManager;
 import app.CommandManager;
 import app.ConsoleCaller;
+import jakarta.xml.bind.SchemaOutputResolver;
 import object.Tickets;
 import jakarta.xml.bind.JAXBException;
 
@@ -58,7 +59,7 @@ public class FileManager {
     public void fileReader(File file) {
         try {
             Scanner scanner = new Scanner(file, "UTF-8");
-            scanner.useDelimiter("\\z");
+            scanner.useDelimiter("<!--target-->");
             if (scanner.hasNext()) {
                 text = scanner.next();
             }

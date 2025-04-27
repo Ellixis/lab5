@@ -2,40 +2,39 @@
 <tickets>
     <ticket id="1">
         <coordinates>
-            <x>20</x>
-            <y>30.0</y>
+            <x>12</x>
+            <y>21.0</y>
         </coordinates>
-        <creationDate>2025-04-22T16:31:31.792+03:00</creationDate>
-        <discount>2.0</discount>
-        <event>
-            <description>ewfraghrerg</description>
-            <eventType>CONCERT</eventType>
-            <id>1745328720171</id>
-            <minAge>20</minAge>
-            <name>efwfw</name>
-        </event>
-        <name>ewfewfwef</name>
-        <price>21</price>
+        <creationDate>2025-04-27T15:32:38.041+03:00</creationDate>
+        <discount>1.0</discount>
+        <name>el1</name>
+        <price>120</price>
         <refundable>true</refundable>
         <type>USUAL</type>
     </ticket>
     <ticket id="2">
         <coordinates>
-            <x>2</x>
-            <y>1.0</y>
+            <x>12</x>
+            <y>31.0</y>
         </coordinates>
-        <creationDate>2025-04-22T16:32:37.714+03:00</creationDate>
+        <creationDate>2025-04-27T15:33:04.403+03:00</creationDate>
         <discount>1.0</discount>
-        <event>
-            <description>32greegeg</description>
-            <eventType>CONCERT</eventType>
-            <id>1745328788914</id>
-            <minAge>34</minAge>
-            <name>wefwefw</name>
-        </event>
-        <name>ewfwg</name>
-        <price>3232</price>
+        <name>el2</name>
+        <price>12212</price>
+        <refundable>true</refundable>
+        <type>USUAL</type>
+    </ticket>
+    <ticket id="3">
+        <coordinates>
+            <x>12</x>
+            <y>41.0</y>
+        </coordinates>
+        <creationDate>2025-04-27T15:34:00.711+03:00</creationDate>
+        <discount>1.0</discount>
+        <name>el3</name>
+        <price>1244444</price>
         <refundable>true</refundable>
         <type>USUAL</type>
     </ticket>
 </tickets>
+<!--target-->

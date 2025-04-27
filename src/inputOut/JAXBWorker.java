@@ -25,7 +25,7 @@ public class JAXBWorker {
         marshaller.marshal(collection, os);
 
         try (OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(fileName), "UTF-8")) {
-            writer.write(os.toString());
+            writer.write(os.toString()+"<!--target-->");
             System.out.println("Коллекция успешно записана в файл");
         } catch (IOException e) {
             System.out.println("Не удалось записать коллекцию в файл");

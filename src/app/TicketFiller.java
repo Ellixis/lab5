@@ -35,7 +35,7 @@ public class TicketFiller {
             if (fillCoordinates(ticket, coordinates, text)) {
                 break;
             } else {
-                System.out.println("ВВедите нормальные координаты");
+                System.out.println("Введите нормальные координаты");
             }
         }
 
@@ -223,18 +223,13 @@ public class TicketFiller {
             try {
                 int x = Integer.parseInt(parts[0]);
                 double y = Double.parseDouble(parts[1]);
+                coordinates.setX(x);
+                coordinates.setY(y);
+                ticket.setCoordinates(coordinates);
+                return true;
 
-                if (y < -174) {
-                    System.out.println("hue");
-                    return false;
-                } else {
-                    coordinates.setX(x);
-                    coordinates.setY(y);
-                    ticket.setCoordinates(coordinates);
-                    return true;
-                }
             } catch (Exception e) {
-                System.out.println("JHGFjevfhew");
+                System.out.println("Не правильно введены координаты");
                 return false;
             }
         } else {

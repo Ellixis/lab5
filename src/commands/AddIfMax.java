@@ -8,7 +8,6 @@ import object.Ticket;
 public class AddIfMax implements Command {
 
     @Override
-    //Хуйня ебаная
     public void execute(String argument) {
         TicketFiller ticketFiller = new TicketFiller();
         CollectionManager collectionManager = App.getApp().getCollectionManager();

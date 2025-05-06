@@ -36,5 +36,17 @@
         <refundable>true</refundable>
         <type>USUAL</type>
     </ticket>
+    <ticket id="4">
+        <coordinates>
+            <x>12</x>
+            <y>21.0</y>
+        </coordinates>
+        <creationDate>2025-05-06T19:17:32.943+03:00</creationDate>
+        <discount>12.0</discount>
+        <name>qewrtg</name>
+        <price>123435</price>
+        <refundable>false</refundable>
+        <type>USUAL</type>
+    </ticket>
 </tickets>
 <!--target-->

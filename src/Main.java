@@ -29,6 +29,7 @@ public class Main {
         commandManager.registerCommand("add_if_max", new AddIfMax());
         commandManager.registerCommand("update_id", new UpdateId());
         commandManager.registerCommand("all_prices", new PrintFieldDescendingPrice());
+        commandManager.registerCommand("refundable", new FilterGreaterThanRefundable());
         fileManager.importCollection();
         app.start();
 

@@ -59,13 +59,13 @@ public class TicketFiller {
             }
         }
 
-        System.out.println("Он возвратный? true/false/null");
+        System.out.println("Он возвратный? true/false");
         while (true) {
             text = scanner.nextLine();
             if (fillRefundable(ticket, text)) {
                 break;
             } else {
-                System.out.println("Введите существующий скидос:");
+                System.out.println("Он возвратный?");
             }
         }
         System.out.println("Введите тип билета:" + Arrays.toString(TicketType.values()));

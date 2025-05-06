@@ -44,6 +44,15 @@ public class CollectionManager {
         PricesList.sort(Collections.reverseOrder());
         System.out.println(PricesList);
     }
+    public void seeRefundable(boolean ref){
+        ArrayDeque<Ticket> refList= new ArrayDeque<>();
+        for (Ticket ticket : collection) {
+           if (ticket.getRefundable() == ref) {
+               refList.add(ticket);
+           }
+        }
+        System.out.println(refList);
+    }
     public void clearCollection() {
         collection.clear();
         currentid = 0L;

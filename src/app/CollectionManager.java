@@ -53,6 +53,20 @@ public class CollectionManager {
         }
         System.out.println(refList);
     }
+    public void seeNames(String ticket_name){
+        ArrayDeque<Ticket> nameList= new ArrayDeque<>();
+        for (Ticket ticket : collection) {
+            if (ticket.getName().contains(ticket_name)) {
+                nameList.add(ticket);
+            }
+        }
+        if (!nameList.isEmpty()) {
+            System.out.println(nameList);
+        }
+        else {
+            System.out.println("Таких элементов нет");
+        }
+    }
     public void clearCollection() {
         collection.clear();
         currentid = 0L;

@@ -30,6 +30,7 @@ public class Main {
         commandManager.registerCommand("update_id", new UpdateId());
         commandManager.registerCommand("all_prices", new PrintFieldDescendingPrice());
         commandManager.registerCommand("refundable", new FilterGreaterThanRefundable());
+        commandManager.registerCommand("filter_name", new FilterContainsName());
         fileManager.importCollection();
         app.start();
 

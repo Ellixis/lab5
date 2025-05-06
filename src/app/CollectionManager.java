@@ -21,6 +21,10 @@ public class CollectionManager {
         ticket.setId(getCurrentid());
         collection.add(ticket);
     }
+    public void addTicket(Ticket ticket, long id){
+        ticket.setId(id);
+        collection.add(ticket);
+    }
     public void setCurrentid() {
         for (Ticket ticket : collection) {
             if (ticket.getId() > currentid) {

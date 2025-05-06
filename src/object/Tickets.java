@@ -2,11 +2,11 @@ package object;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
+import java.io.Serializable;
 import java.util.ArrayDeque;
-import java.util.LinkedList;
 
 @XmlRootElement()
-public class Tickets {
+public class Tickets implements Serializable {
 
     private ArrayDeque<Ticket> collection;
 

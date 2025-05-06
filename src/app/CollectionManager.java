@@ -10,8 +10,13 @@ public class CollectionManager {
     private Long currentid = 0L;
     private Long currentprice = 0L;
 
-    public void setCollection(Tickets collection) {
-        this.collection = collection.getTickets();
+    public void setCollection(Tickets tickets) {
+        this.collection = tickets.getTickets();
+        for (Ticket ticket : collection) {
+            if (ticket.getId() > currentid) {
+                currentid = ticket.getId();
+            }
+        }
     }
 
     public ArrayDeque<Ticket> getCollection() {
@@ -21,6 +26,7 @@ public class CollectionManager {
         ticket.setId(getCurrentid());
         collection.add(ticket);
     }
+
     public void setCurrentid() {
         for (Ticket ticket : collection) {
             if (ticket.getId() > currentid) {

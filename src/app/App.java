@@ -66,15 +66,12 @@ public class App {
     }
 
     public void start() {
-
         while (true) {
             try {
                 String text = scanner.nextLine().toLowerCase().trim();
                 if (text.equals("exit")) {
                     break;
                 }
-
-
                 consoleCaller.call(text);
             } catch (NoSuchElementException e) {
                 System.out.println("Ctrl + D. ");

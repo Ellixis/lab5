@@ -8,8 +8,6 @@ public class ConsoleCaller {
 
     private final CommandManager commandManager = App.getApp().getCommandManager();
 
-
-
     public void call(String text) {
         String[] request = text.toLowerCase().split(" ");
         String argument = "";

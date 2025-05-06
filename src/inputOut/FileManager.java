@@ -7,8 +7,9 @@ import app.CommandManager;
 import app.ConsoleCaller;
 import object.Tickets;
 import jakarta.xml.bind.JAXBException;
-
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.Scanner;
 
 
@@ -54,16 +55,12 @@ public class FileManager {
         }
     }
 
-    
+
     public void fileReader(File file) {
         try {
-            Scanner scanner = new Scanner(file, "UTF-8");
-            scanner.useDelimiter("\\z");
-            if (scanner.hasNext()) {
-                text = scanner.next();
-            }
-        } catch (FileNotFoundException e){
-            System.out.println("Ошибка: отсутствует файл");
+            text = Files.readString(file.toPath(), StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            System.out.println("Ошибка чтения файла: " + e.getMessage());
         }
     }
 
@@ -71,7 +68,6 @@ public class FileManager {
 
     public void textToObject() {
         if (text != null) {
-
             JAXBWorker jaxbWorker = new JAXBWorker();
             Tickets tickets = jaxbWorker.convertXmlToObject(text);
             if ((tickets != null) && (tickets.getTickets() != null)) {
@@ -81,8 +77,6 @@ public class FileManager {
                     } else {
                         System.out.println("Коллекция не была импортирована");
                     }
-
-
                 }
 
             }

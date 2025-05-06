@@ -30,7 +30,5 @@ public class Main {
         fileManager.importCollection();
         app.start();
 
-
-
     }
 }

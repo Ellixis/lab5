@@ -8,7 +8,6 @@ import object.Tickets;
 
 public class TicketsChecker {
     public static boolean checkTickets(Tickets tickets){
-
         for (Ticket ticket: tickets.getTickets()){
             if (!checkTicket(ticket)){
                 return false;

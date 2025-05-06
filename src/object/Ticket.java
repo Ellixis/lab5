@@ -1,14 +1,13 @@
 package object;
 
 
-import jakarta.xml.bind.annotation.XmlAttribute;
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.Date;
 
 @XmlRootElement
-public class Ticket {
+public class Ticket implements Serializable {
     private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
@@ -35,10 +34,11 @@ public class Ticket {
     public int compareTo(Ticket ticket) {
         return Long.compare(this.id, ticket.getId());
     }
+    @XmlElement
     public void setId(Long id) {
         this.id = id;
     }
-    @XmlAttribute
+    @XmlElement
     public Long getId() {
         return id;
     }
@@ -81,9 +81,6 @@ public class Ticket {
         return coordinates;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public void setEvent(Event event) {
         this.event = event;
@@ -100,7 +97,6 @@ public class Ticket {
     public Event getEvent() {
         return event;
     }
-
 
     @Override
     public String toString() {

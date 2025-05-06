@@ -26,13 +26,14 @@
     </ticket>
     <ticket id="1">
         <coordinates>
-            <x>1234</x>
-            <y>5432.0</y>
+            <x>12</x>
+            <y>33333.0</y>
         </coordinates>
-        <creationDate>2025-05-06T16:17:40.833+03:00</creationDate>
-        <discount>1.0</discount>
-        <name>хуй</name>
-        <refundable>false</refundable>
+        <creationDate>2025-05-06T16:42:01.263+03:00</creationDate>
+        <discount>12.0</discount>
+        <name>ыавп</name>
+        <price>123</price>
+        <refundable>true</refundable>
         <type>USUAL</type>
     </ticket>
 </tickets>

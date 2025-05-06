@@ -28,6 +28,7 @@ public class Main {
         commandManager.registerCommand("remove_head", new RemoveHead());
         commandManager.registerCommand("add_if_max", new AddIfMax());
         commandManager.registerCommand("update_id", new UpdateId());
+        commandManager.registerCommand("all_prices", new PrintFieldDescendingPrice());
         fileManager.importCollection();
         app.start();
 

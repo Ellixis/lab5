@@ -1,6 +1,7 @@
 package app;
 
-import java.util.ArrayDeque;
+import java.util.*;
+
 import object.Ticket;
 import object.Tickets;
 
@@ -35,7 +36,14 @@ public class CollectionManager {
     public Long getCurrentid(){
         return ++currentid;
     }
-
+    public void seePrices() {
+        List<Long> PricesList = new ArrayList<>();
+        for (Ticket ticket : collection) {
+            PricesList.add(ticket.getPrice());
+        }
+        PricesList.sort(Collections.reverseOrder());
+        System.out.println(PricesList);
+    }
     public void clearCollection() {
         collection.clear();
         currentid = 0L;

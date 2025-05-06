@@ -16,8 +16,11 @@ import java.util.Scanner;
 public class FileManager {
 
 
-    private final String fileName = "col.xml";
+    private String fileName;
 
+    public FileManager(String fileName) {
+        this.fileName = fileName;
+    }
   
     private final CollectionManager collectionManager = App.getApp().getCollectionManager();
     private final CommandManager commandManager = App.getApp().getCommandManager();

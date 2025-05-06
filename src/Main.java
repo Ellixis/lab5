@@ -9,11 +9,11 @@ public class Main {
     public static void main(String[] args) {
         App app =  App.getApp();
         app.setCollectionManager(new CollectionManager());
-
+        String filename = args [0];
         CommandManager commandManager = new CommandManager();
         app.setCommandManager(commandManager);
         app.setConsoleCaller(new ConsoleCaller());
-        FileManager fileManager = new FileManager();
+        FileManager fileManager = new FileManager(filename);
         app.setFileManager(fileManager);
 
         commandManager.registerCommand("add", new Add());
